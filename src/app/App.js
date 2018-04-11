@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Table from 'Components/Table/Table';
+import { Row, Col } from 'react-materialize';
 
 export default class App extends Component {
     constructor (props) {
@@ -10,13 +11,17 @@ export default class App extends Component {
     render () {
         const header = ['Name', 'Item Name', 'Item Price'];
         const items = [
-            [1,2,3],
-            [4,5,6]
+            ['Alvin', 'Eclair', '$0.87'],
+            ['Alan', 'Jellybean', '$3.76'],
+            ['Jonathan', 'Lollipop', '$7.00'],
         ];
+
         return (
-            <div>
-                <Table header={ header } items={ items } />
-            </div>
+            <Row>
+                <Col s={8} offset="s2">
+                    <Table header={ header } items={ items } />
+                </Col>
+            </Row>
         );
     }
 }
