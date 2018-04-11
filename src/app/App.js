@@ -11,6 +11,11 @@ export default class App extends Component {
         }
 
         this.increment = this.increment.bind(this);
+        console.log('App.constructor');
+    }
+
+    componentWillMount () {
+        console.log('App.componentWillMount');
     }
 
     increment () {
@@ -19,7 +24,8 @@ export default class App extends Component {
         });
     }
 
-    render() {
+    render () {
+        console.log('App.render');
         return (
             <div>
                 Moja prva komponenta
@@ -27,5 +33,9 @@ export default class App extends Component {
                 <Button handler={ this.increment } />
             </div>
         );
+    }
+
+    componentDidMount () {
+        console.log('App.componentDidMount');
     }
 }
