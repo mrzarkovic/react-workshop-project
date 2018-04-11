@@ -1,41 +1,22 @@
 import React, { Component } from 'react';
 
-import Info from 'Components/Info';
-import Button from 'Components/Button';
+import Table from 'Components/Table/Table';
 
 export default class App extends Component {
     constructor (props) {
         super(props);
-        this.state = {
-            result: 0
-        }
-
-        this.increment = this.increment.bind(this);
-        console.log('App.constructor');
-    }
-
-    componentWillMount () {
-        console.log('App.componentWillMount');
-    }
-
-    increment () {
-        this.setState({
-            result: this.state.result + 1
-        });
     }
 
     render () {
-        console.log('App.render');
+        const header = ['Name', 'Item Name', 'Item Price'];
+        const items = [
+            [1,2,3],
+            [4,5,6]
+        ];
         return (
             <div>
-                Moja prva komponenta
-                <Info info={ '' + this.state.result } />
-                <Button handler={ this.increment } />
+                <Table header={ header } items={ items } />
             </div>
         );
-    }
-
-    componentDidMount () {
-        console.log('App.componentDidMount');
     }
 }
