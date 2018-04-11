@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Table from 'Components/Table/Table';
+import CategoriesList from 'Components/CategoriesList/CategoriesList';
 import { Row, Col } from 'react-materialize';
 
 export default class App extends Component {
@@ -18,8 +18,8 @@ export default class App extends Component {
 
         return (
             <Row>
-                <Col s={8} offset="s2">
-                    <Table header={ header } items={ items } />
+                <Col s={ 8 } offset="s2">
+                    <CategoriesList />
                 </Col>
             </Row>
         );

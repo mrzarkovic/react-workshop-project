@@ -5,6 +5,12 @@ import Row from 'Components/Table/Row';
 import { Table as MTable } from 'react-materialize';
 
 export default class Table extends Component {
+
+    constructor(props){
+        super(props);
+        this.getHeader = this.getHeader.bind(this);
+    }
+
     static propTypes = {
         header: PropTypes.array,
         items: PropTypes.array.isRequired

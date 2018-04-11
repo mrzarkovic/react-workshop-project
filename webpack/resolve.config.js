@@ -10,7 +10,8 @@ const resolveConfig = {
         alias: {
             App: path.resolve(__dirname, '../src/app/'),
             Config: path.resolve(__dirname, '../src/conf/'),
-            Components: path.resolve(__dirname, '../src/components/')
+            Components: path.resolve(__dirname, '../src/components/'),
+            Wrappers: path.resolve(__dirname, '../src/wrappers/')
         }
     }
 };
