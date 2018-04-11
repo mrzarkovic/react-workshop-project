@@ -1,5 +1,5 @@
 // Contains base configuration for all environments
-
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const { resolve } = require("path");
 const webpack = require("webpack");
 const merge = require("webpack-merge");
@@ -23,10 +23,17 @@ const config = merge(resolveConfig, {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       }
     ]
-  }
+  },
+
+  plugins: [
+    new ExtractTextPlugin("styles.css"),
+  ]
 });
 
 module.exports = config;
