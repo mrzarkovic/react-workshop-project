@@ -13,7 +13,8 @@ const resolveConfig = {
             Components: path.resolve(__dirname, '../src/components/'),
             Wrappers: path.resolve(__dirname, '../src/wrappers/'),
             Pages: path.resolve(__dirname, '../src/pages/'),
-            Routes: path.resolve(__dirname, '../src/routes/')
+            Routes: path.resolve(__dirname, '../src/routes/'),
+            Reducers: path.resolve(__dirname, '../src/reducers/')
         }
     }
 };
