@@ -19,7 +19,7 @@ export default class Card extends Component {
                     <Image />
                 </Col>
                 <Col s={4}>
-                    <h1>{this.props.ad.description}</h1>
+                    <h1>{this.props.ad.title}</h1>
                     <p>{this.props.ad.description}</p>
                 </Col>
                 <Col s={2}>

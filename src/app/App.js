@@ -3,32 +3,59 @@ import React, { Component } from 'react';
 import AdCard from 'Components/ad-card/Card';
 import { Row, Col } from 'react-materialize';
 
-export default class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            ad: {
-                title: 'Moj oglas',
-                description: 'Opis mog oglasa',
-                price: '114 din',
-                stats: {
-                    viewsCount: 300,
-                    renewed: true,
-                    postedTime: 'Pre 4 nedelje',
-                    followers: 10
-                },
-                location: 'Beograd | Vozdovac'
-            }
-        }
-    }
+import { connect } from 'react-redux';
+import { createAds, addAd } from 'Reducers/Ads';
 
+class App extends Component {
     render() {
+        console.log(this.props.ads);
         return (
             <Row>
                 <Col s={8} offset="s2">
-                    <AdCard ad={this.state.ad} />
+                    {
+                        this.props.ads.map((ad, index) => {
+                            return <AdCard ad={ad} key={index} />
+                        })
+                    }
+                    <button onClick={() => {
+                        this.props.handleAddAd({
+                            title: 'Novi oglas #' + Math.random(),
+                            description: 'Opis novog oglasa',
+                            price: '200 din',
+                            stats: {
+                                viewsCount: 123,
+                                renewed: false,
+                                postedTime: 'Pre 2 nedelje',
+                                followers: 3
+                            },
+                            location: 'Nis'
+                        })
+                    }}>Add an Ad</button>
                 </Col>
             </Row>
         );
     }
+
+    componentDidMount () {
+        this.props.handleCreateAds();
+    }
 }
+
+function mapStateToProps (state) {
+    return {
+        ads: state.ads
+    }
+}
+
+function mapDispatchToProps (dispatch) {
+    return {
+        handleCreateAds: () => {
+            dispatch(createAds());
+        },
+        handleAddAd: (ad) => {
+            dispatch(addAd(ad));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
