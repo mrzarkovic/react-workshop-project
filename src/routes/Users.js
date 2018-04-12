@@ -6,10 +6,10 @@ import UsersProfile from 'Pages/UsersProfile';
 
 const Users = () => {
     return (
-        <Switch>
-            <Route exact path="/users" component={PageUsers} />
+        <div>
+            <Route path="/users" component={PageUsers} />
             <Route path="/users/:id" component={UsersProfile} />
-        </Switch>
+        </div>
     );
 };
 

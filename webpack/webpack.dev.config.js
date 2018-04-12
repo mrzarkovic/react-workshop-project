@@ -21,7 +21,8 @@ const config = merge(baseConfig, {
   devServer: {
     hot: true,
     contentBase: resolve(__dirname, "../src"),
-    publicPath: "/"
+    publicPath: "/",
+    historyApiFallback: true
   },
 
   plugins: [new webpack.HotModuleReplacementPlugin()]

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {
     Route,
-    Link
+    Link,
+    Switch,
+    Prompt
 } from 'react-router-dom';
 
 import Home from 'Pages/Home';
@@ -20,12 +22,16 @@ export default class App extends Component {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/users">Users</Link></li>
+                    <li><Link to="/asdf">404</Link></li>
                 </ul>
 
                 <hr />
 
-                <Route exact path="/" component={Home}></Route>
-                <Route path="/users" component={Users}></Route>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/users" component={Users} />
+                    <Route render={() => <div>404</div>} />
+                </Switch>
             </div>
         );
     }
