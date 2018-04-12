@@ -23,16 +23,16 @@ export default class Card extends Component {
                     <p>{this.props.ad.description}</p>
                 </Col>
                 <Col s={2}>
-                    <span>{this.props.ad.price}</span>
+                    <span className="price">{this.props.ad.price}</span>
                 </Col>
                 <Col s={2}>
-                    <div>{this.props.ad.stats.viewsCount}</div>
-                    {this.props.ad.stats.renewed && <div>(obnovljen)</div>}
-                    <div>{this.props.ad.stats.postedTime}</div>
-                    {this.props.ad.stats.followers && <div>{this.props.ad.stats.followers}</div>}
+                    <div className="views-count">{this.props.ad.stats.viewsCount}</div>
+                    {this.props.ad.stats.renewed && <div className="renew-promotion">(obnovljen)</div>}
+                    <div className="posted-time">{this.props.ad.stats.postedTime}</div>
+                    {this.props.ad.stats.followers && <div className="followers">{this.props.ad.stats.followers}</div>}
                 </Col>
                 <Col s={2}>
-                    <span>{this.props.ad.location}</span>
+                    <div className="location-name">{this.props.ad.location}</div>
                 </Col>
             </Row>
         );

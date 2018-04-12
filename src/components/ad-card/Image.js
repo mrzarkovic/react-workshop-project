@@ -13,9 +13,9 @@ export default class Image extends Component {
 
     render() {
         return (
-            <Fragment>
+            <div className="image-holder">
                 <img src={this.props.src} alt={this.props.alt} />
-            </Fragment>
+            </div>
         );
     }
 }

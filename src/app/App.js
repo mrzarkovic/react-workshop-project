@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import AdCard from 'Components/ad-card/Card';
-import { Row, Col } from 'react-materialize';
+import { Row, Col, Button } from 'react-materialize';
 
 import { connect } from 'react-redux';
 import { createAds, addAd } from 'Reducers/Ads';
@@ -17,7 +17,7 @@ class App extends Component {
                             return <AdCard ad={ad} key={index} />
                         })
                     }
-                    <button onClick={() => {
+                    <Button onClick={() => {
                         this.props.handleAddAd({
                             title: 'Novi oglas #' + Math.random(),
                             description: 'Opis novog oglasa',
@@ -30,7 +30,7 @@ class App extends Component {
                             },
                             location: 'Nis'
                         })
-                    }}>Add an Ad</button>
+                    }}>Add an Ad</Button>
                 </Col>
             </Row>
         );
