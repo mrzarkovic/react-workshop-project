@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
 
-import CategoriesList from 'Components/CategoriesList/CategoriesList';
+import AdCard from 'Components/ad-card/Card';
 import { Row, Col } from 'react-materialize';
 
 export default class App extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
+        this.state = {
+            ad: {
+                title: 'Moj oglas',
+                description: 'Opis mog oglasa',
+                price: '114 din',
+                stats: {
+                    viewsCount: 300,
+                    renewed: true,
+                    postedTime: 'Pre 4 nedelje',
+                    followers: 10
+                },
+                location: 'Beograd | Vozdovac'
+            }
+        }
     }
 
-    render () {
-        const header = ['Name', 'Item Name', 'Item Price'];
-        const items = [
-            ['Alvin', 'Eclair', '$0.87'],
-            ['Alan', 'Jellybean', '$3.76'],
-            ['Jonathan', 'Lollipop', '$7.00'],
-        ];
-
+    render() {
         return (
             <Row>
-                <Col s={ 8 } offset="s2">
-                    <CategoriesList />
+                <Col s={8} offset="s2">
+                    <AdCard ad={this.state.ad} />
                 </Col>
             </Row>
         );

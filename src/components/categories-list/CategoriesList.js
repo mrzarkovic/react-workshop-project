@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import ButtonTabsHolder from 'Components/CategoriesList/ButtonTabsHolder';
-import LinksListHolder from 'Components/CategoriesList/LinksListHolder';
+import ButtonTabsHolder from 'Components/categories-list/ButtonTabsHolder';
+import LinksListHolder from 'Components/categories-list/LinksListHolder';
 
 export default class CategoriesList extends Component {
     constructor (props) {
