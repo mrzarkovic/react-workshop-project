@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Cell from 'Components/Table/Cell'
+import Cell from 'Components/table/Cell'
 
 export default class Row extends Component {
     static propTypes = {
@@ -9,12 +9,12 @@ export default class Row extends Component {
         type: PropTypes.string
     };
 
-    render () {
+    render() {
         return (
             <tr>
                 {
                     this.props.item.map((value, index) => {
-                        return <Cell type={ this.props.type } value={ value } key={ index } />
+                        return <Cell type={this.props.type} value={value} key={index} />
                     })
                 }
             </tr>

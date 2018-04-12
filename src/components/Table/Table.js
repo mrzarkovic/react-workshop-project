@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Row from 'Components/Table/Row';
+import Row from 'Components/table/Row';
 import { Table as MTable } from 'react-materialize';
 
 export default class Table extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.getHeader = this.getHeader.bind(this);
     }
@@ -16,22 +16,22 @@ export default class Table extends Component {
         items: PropTypes.array.isRequired
     };
 
-    getHeader () {
+    getHeader() {
         return (
             <thead>
-                <Row item={ this.props.header } type='header' />
+                <Row item={this.props.header} type='header' />
             </thead>
         );
     }
 
-    render () {
+    render() {
         return (
             <MTable striped bordered>
-                { this.props.header.length && this.getHeader() }
+                {this.props.header.length && this.getHeader()}
                 <tbody>
                     {
                         this.props.items.map((item, index) => {
-                            return <Row item={ item } key={ index } />
+                            return <Row item={item} key={index} />
                         })
                     }
                 </tbody>

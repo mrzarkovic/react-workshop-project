@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
+import {
+    Route,
+    Link
+} from 'react-router-dom';
 
-import CategoriesList from 'Components/CategoriesList/CategoriesList';
-import { Row, Col } from 'react-materialize';
+import Home from 'Pages/Home';
+import Users from 'Routes/Users';
+
+import 'Pages/Style.css';
 
 export default class App extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
     }
 
-    render () {
-        const header = ['Name', 'Item Name', 'Item Price'];
-        const items = [
-            ['Alvin', 'Eclair', '$0.87'],
-            ['Alan', 'Jellybean', '$3.76'],
-            ['Jonathan', 'Lollipop', '$7.00'],
-        ];
-
+    render() {
         return (
-            <Row>
-                <Col s={ 8 } offset="s2">
-                    <CategoriesList />
-                </Col>
-            </Row>
+            <div>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/users">Users</Link></li>
+                </ul>
+
+                <hr />
+
+                <Route exact path="/" component={Home}></Route>
+                <Route path="/users" component={Users}></Route>
+            </div>
         );
     }
 }
