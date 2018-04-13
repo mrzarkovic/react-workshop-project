@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 
 import Button from 'Components/Button';
 
@@ -11,13 +11,12 @@ describe('Test case button', () => {
 
     it('Should call life-cycle method `shouldComponentUpdate`', () => {
         spyOn(Button.prototype, 'shouldComponentUpdate').and.callThrough();
-        const wrapper = mount(<Button text="Dodaj" />);
+        const wrapper = shallow(<Button text="Dodaj" />);
         wrapper.setProps({text: 'Nesto drugo'});
         expect(Button.prototype.shouldComponentUpdate).toHaveBeenCalledTimes(1);
     });
 
     it('Should not re-render', () => {
-        spyOn(Button.prototype, 'shouldComponentUpdate').and.callThrough();
         const component = shallow(<Button text="Dodaj" />)
         const shouldUpdate = component.instance().shouldComponentUpdate({text: 'Dodaj'}, null);
         expect(shouldUpdate).toBe(false)
