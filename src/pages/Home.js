@@ -28,7 +28,7 @@ class Home extends Component {
                         })
                     }
                 </div>
-                <Button handler={this.addRandomNumber} />
+                <Button handler={this.addRandomNumber} text="Increment" />
             </React.Fragment>
         );
     }

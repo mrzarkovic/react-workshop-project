@@ -19,7 +19,7 @@ export default class Button extends Component {
     render () {
         console.log('Button.render');
         return (
-            <button onClick={ this.props.handler }>
+            <button onClick={ this.props.handler } id="button">
                 {this.props.text}
             </button>
         );
