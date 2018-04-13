@@ -9,7 +9,7 @@ export default class Button extends Component {
     };
 
     shouldComponentUpdate (nextProps, nextState) {
-        if (this.props.handler === nextProps.handler && this.state === nextState) {
+        if (this.props.text === nextProps.text && this.state === nextState) {
             return false;
         }
 
